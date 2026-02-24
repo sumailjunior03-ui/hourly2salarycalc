@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Hourly to Salary Calculator | hourly2salarycalc.com</title>
+        <meta
+            name="description"
+            content="Instantly convert your hourly wage to annual, monthly, bi-weekly, and weekly salary. Free hourly2salarycalc.com Calculator for job seekers and recruiters."
+        />
+        <meta name="google-adsense-account" content="ca-pub-7744853829365165" />
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="brand">
+                    <h1>hourly2salarycalc<span class="dot">.com</span></h1>
+                    <p>Hourly wage → annual salary, instantly</p>
+                </div>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="legal.html">Legal</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </header>
+
+            <!-- Sponsor banner (inactive) -->
+            <div
+                class="sponsor-banner"
+                style="display: none"
+                aria-hidden="true"
+            >
+                <span class="sponsor-label">Sponsored</span>
+                <span class="sponsor-content"></span>
+            </div>
+
+            <!-- AdSense top -->
+            <div class="ad-slot">
+                <ins
+                    class="adsbygoogle"
+                    style="display: block"
+                    data-ad-client="ca-pub-7744853829365165"
+                    data-ad-slot="TOP_AD_SLOT_ID"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                ></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="grid">
+                <section class="card">
+                    <h2>Enter your hourly wage</h2>
+                    <p>
+                        Adjust hours per week and weeks per year if needed.
+                        Results update instantly.
+                    </p>
+
+                    <label for="hourly">Hourly Wage ($)</label>
+                    <input
+                        type="text"
+                        inputmode="decimal"
+                        id="hourly"
+                        placeholder="e.g. 25.00"
+                    />
+
+                    <label for="hours">Hours Per Week</label>
+                    <input
+                        type="text"
+                        inputmode="decimal"
+                        id="hours"
+                        value="40"
+                    />
+
+                    <label for="weeks">Weeks Per Year</label>
+                    <input
+                        type="text"
+                        inputmode="decimal"
+                        id="weeks"
+                        value="52"
+                    />
+
+                    <button class="btn" onclick="calculate()">
+                        Calculate Salary
+                    </button>
+
+                    <div class="result" id="result" style="display: none">
+                        <div class="result-grid">
+                            <div class="result-item big-result">
+                                <span class="result-label">Annual Salary</span>
+                                <span class="result-value" id="annual">—</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Monthly</span>
+                                <span class="result-value" id="monthly">—</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Bi-Weekly</span>
+                                <span class="result-value" id="biweekly"
+                                    >—</span
+                                >
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Weekly</span>
+                                <span class="result-value" id="weekly">—</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Daily</span>
+                                <span class="result-value" id="daily">—</span>
+                            </div>
+                        </div>
+                        <p class="mini" id="assumption-note"></p>
+                    </div>
+
+                    <p class="mini">
+                        Disclaimer: Results are estimates based on the numbers
+                        you enter. Taxes, benefits, and overtime are not
+                        included. Not financial advice.
+                    </p>
+                </section>
+
+                <aside class="card">
+                    <h2>What this tool does</h2>
+                    <p>
+                        Quickly convert an hourly wage to a full salary
+                        breakdown. Essential for job seekers comparing offers,
+                        recruiters quoting packages, or anyone negotiating pay.
+                    </p>
+                    <ul>
+                        <li>Annual, monthly, bi-weekly, weekly &amp; daily</li>
+                        <li>Adjustable hours per week and weeks per year</li>
+                        <li>Instant calculation — no account needed</li>
+                        <li>Runs entirely in your browser</li>
+                    </ul>
+
+                    <div class="sep"></div>
+
+                    <div class="quick-ref">
+                        <p><strong>Common equivalents</strong></p>
+                        <div class="quick-grid">
+                            <span>$15/hr</span><span>$31,200/yr</span>
+                            <span>$20/hr</span><span>$41,600/yr</span>
+                            <span>$25/hr</span><span>$52,000/yr</span>
+                            <span>$30/hr</span><span>$62,400/yr</span>
+                            <span>$50/hr</span><span>$104,000/yr</span>
+                        </div>
+                        <p class="mini">Based on 40hrs/week × 52 weeks</p>
+                    </div>
+
+                    <div class="sep"></div>
+                    <p class="mini">
+                        No accounts, no tracking, no subscriptions.
+                    </p>
+
+                    <!-- Sidebar sponsor slot (inactive) -->
+                    <div
+                        class="sponsor-sidebar"
+                        style="display: none"
+                        aria-hidden="true"
+                    >
+                        <span class="sponsor-label">Sponsored</span>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- AdSense bottom -->
+            <div class="ad-slot">
+                <ins
+                    class="adsbygoogle"
+                    style="display: block"
+                    data-ad-client="ca-pub-7744853829365165"
+                    data-ad-slot="BOTTOM_AD_SLOT_ID"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                ></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <footer class="foot">
+                <div class="sep"></div>
+                <div class="network-links related-tools"></div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a> &nbsp;|&nbsp;
+                    <a href="legal.html">Legal</a> &nbsp;|&nbsp;
+                    <a href="faq.html">FAQ</a> &nbsp;|&nbsp;
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-meta">
+                    © <span id="year"></span> hourly2salarycalc.com
+                </div>
+                <p class="sponsor-line">
+                    Sponsored placements &amp; partnerships:
+                    <a href="mailto:partnerships@calc-hq.com"
+                        >partnerships@calc-hq.com</a
+                    >
+                </p>
+            </footer>
+        </div>
+
+        <script>
+            function fmt(n) {
+                return (
+                    "$" +
+                    n.toLocaleString("en-US", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                    })
+                );
+            }
+
+            function calculate() {
+                const hourly = parseFloat(
+                    document.getElementById("hourly").value.replace(/,/g, ""),
+                );
+                const hours = parseFloat(
+                    document.getElementById("hours").value,
+                );
+                const weeks = parseFloat(
+                    document.getElementById("weeks").value,
+                );
+
+                const result = document.getElementById("result");
+
+                if (
+                    isNaN(hourly) ||
+                    isNaN(hours) ||
+                    isNaN(weeks) ||
+                    hourly <= 0 ||
+                    hours <= 0 ||
+                    weeks <= 0
+                ) {
+                    result.style.display = "none";
+                    return;
+                }
+
+                const annual = hourly * hours * weeks;
+                const monthly = annual / 12;
+                const biweekly = annual / 26;
+                const weekly = hourly * hours;
+                const daily = hourly * (hours / 5);
+
+                document.getElementById("annual").textContent = fmt(annual);
+                document.getElementById("monthly").textContent = fmt(monthly);
+                document.getElementById("biweekly").textContent = fmt(biweekly);
+                document.getElementById("weekly").textContent = fmt(weekly);
+                document.getElementById("daily").textContent = fmt(daily);
+
+                document.getElementById("assumption-note").textContent =
+                    `Based on ${hours} hrs/week × ${weeks} weeks/year = ${hours * weeks} total hours.`;
+
+                result.style.display = "block";
+            }
+
+            // Calculate on input change for instant results
+            ["hourly", "hours", "weeks"].forEach(function (id) {
+                document
+                    .getElementById(id)
+                    .addEventListener("input", calculate);
+            });
+
+            // Auto calculate on load if default values present
+            calculate();
+
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+        <script src="network.js"></script>
+    </body>
+</html>

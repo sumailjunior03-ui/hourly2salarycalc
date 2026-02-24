@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>FAQ — hourly2salarycalc.com</title>
+        <meta
+            name="description"
+            content="Frequently asked questions about the hourly2salarycalc calculator."
+        />
+        <meta name="google-adsense-account" content="ca-pub-7744853829365165" />
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="brand">
+                    <h1>hourly2salarycalc<span class="dot">.com</span></h1>
+                    <p>Hourly wage → annual salary, instantly</p>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="faq.html" class="active">FAQ</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="legal.html">Legal</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </header>
+
+            <section class="card legal">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>How is annual salary calculated?</h3>
+                <p>
+                    Annual salary = hourly wage × hours per week × weeks per
+                    year. The default is 40 hours × 52 weeks = 2,080 total hours
+                    per year.
+                </p>
+
+                <h3>How is monthly salary calculated?</h3>
+                <p>Monthly = annual salary ÷ 12.</p>
+
+                <h3>How is bi-weekly pay calculated?</h3>
+                <p>
+                    Bi-weekly = annual salary ÷ 26. There are 26 bi-weekly pay
+                    periods in a year.
+                </p>
+
+                <h3>Does this include taxes?</h3>
+                <p>
+                    No. This tool calculates gross (pre-tax) salary equivalents
+                    only. Your take-home pay will be lower depending on your tax
+                    bracket, location, and deductions.
+                </p>
+
+                <h3>What if I work part-time?</h3>
+                <p>
+                    Just change the hours per week field. For example, if you
+                    work 20 hours per week enter 20 and the tool will calculate
+                    accordingly.
+                </p>
+
+                <h3>What if I take unpaid weeks off?</h3>
+                <p>
+                    Change the weeks per year field. If you take 2 weeks unpaid
+                    leave, enter 50 weeks instead of 52.
+                </p>
+
+                <h3>Does this tool store my data?</h3>
+                <p>
+                    No. All calculations run entirely in your browser. Nothing
+                    is sent to any server.
+                </p>
+
+                <h3>Is this financial advice?</h3>
+                <p>
+                    No. See our <a href="legal.html">Legal page</a> for full
+                    disclaimer.
+                </p>
+
+                <div class="sep"></div>
+                <p class="mini">
+                    Still have questions? <a href="contact.html">Contact us</a>.
+                </p>
+            </section>
+
+            <footer class="foot">
+                <div class="sep"></div>
+                <div class="network-links related-tools"></div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a> &nbsp;|&nbsp;
+                    <a href="legal.html">Legal</a> &nbsp;|&nbsp;
+                    <a href="faq.html">FAQ</a> &nbsp;|&nbsp;
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-meta">
+                    © <span id="year"></span> hourly2salarycalc.com
+                </div>
+                <p class="sponsor-line">
+                    Sponsored placements &amp; partnerships:
+                    <a href="mailto:partnerships@calc-hq.com"
+                        >partnerships@calc-hq.com</a
+                    >
+                </p>
+            </footer>
+        </div>
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+        <script src="network.js"></script>
+    </body>
+</html>
