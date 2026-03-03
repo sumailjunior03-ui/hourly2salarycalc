@@ -61,19 +61,7 @@
             </div>
 
             <!-- AdSense top -->
-            <div class="ad-slot">
-                <ins
-                    class="adsbygoogle"
-                    style="display: block"
-                    data-ad-client="ca-pub-7744853829365165"
-                    data-ad-slot="TOP_AD_SLOT_ID"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"
-                ></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+            <div class="ad-slot is-off" id="adTop" aria-label="Advertisement"></div>
 
             <div class="grid">
                 <section class="card">
@@ -191,19 +179,7 @@
             </div>
 
             <!-- AdSense bottom -->
-            <div class="ad-slot">
-                <ins
-                    class="adsbygoogle"
-                    style="display: block"
-                    data-ad-client="ca-pub-7744853829365165"
-                    data-ad-slot="BOTTOM_AD_SLOT_ID"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"
-                ></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+            <div class="ad-slot is-off" id="adBottom" aria-label="Advertisement"></div>
 
             <footer class="foot">
                 <div class="sep"></div>
@@ -293,6 +269,8 @@
             document.getElementById("year").textContent =
                 new Date().getFullYear();
         </script>
+        <script src="config.js"></script>
+        <script src="ads.js"></script>
         <script src="network.js"></script>
     </body>
 </html>

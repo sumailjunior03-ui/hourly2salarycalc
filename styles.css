@@ -182,7 +182,10 @@ li { margin: 6px 0; font-size: 0.9rem; }
 .mini { font-size: 0.8rem; color: #999; margin-top: 10px; }
 
 /* Ad slots */
-.ad-slot { margin: 16px 0; min-height: 280px; }
+.ad-slot { margin: 16px 0; }
+
+/* Monetization: collapsed by default (no empty space) */
+.is-off { display: none !important; }
 
 /* Sponsor */
 .sponsor-banner {
