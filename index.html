@@ -95,7 +95,7 @@
                         value="52"
                     />
 
-                    <button class="btn" onclick="calculate()">
+                    <button class="btn" id="calc-btn">
                         Calculate Salary
                     </button>
 
@@ -202,75 +202,9 @@
             </footer>
         </div>
 
-        <script>
-            function fmt(n) {
-                return (
-                    "$" +
-                    n.toLocaleString("en-US", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                    })
-                );
-            }
-
-            function calculate() {
-                const hourly = parseFloat(
-                    document.getElementById("hourly").value.replace(/,/g, ""),
-                );
-                const hours = parseFloat(
-                    document.getElementById("hours").value,
-                );
-                const weeks = parseFloat(
-                    document.getElementById("weeks").value,
-                );
-
-                const result = document.getElementById("result");
-
-                if (
-                    isNaN(hourly) ||
-                    isNaN(hours) ||
-                    isNaN(weeks) ||
-                    hourly <= 0 ||
-                    hours <= 0 ||
-                    weeks <= 0
-                ) {
-                    result.style.display = "none";
-                    return;
-                }
-
-                const annual = hourly * hours * weeks;
-                const monthly = annual / 12;
-                const biweekly = annual / 26;
-                const weekly = hourly * hours;
-                const daily = hourly * (hours / 5);
-
-                document.getElementById("annual").textContent = fmt(annual);
-                document.getElementById("monthly").textContent = fmt(monthly);
-                document.getElementById("biweekly").textContent = fmt(biweekly);
-                document.getElementById("weekly").textContent = fmt(weekly);
-                document.getElementById("daily").textContent = fmt(daily);
-
-                document.getElementById("assumption-note").textContent =
-                    `Based on ${hours} hrs/week × ${weeks} weeks/year = ${hours * weeks} total hours.`;
-
-                result.style.display = "block";
-            }
-
-            // Calculate on input change for instant results
-            ["hourly", "hours", "weeks"].forEach(function (id) {
-                document
-                    .getElementById(id)
-                    .addEventListener("input", calculate);
-            });
-
-            // Auto calculate on load if default values present
-            calculate();
-
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
-        </script>
         <script src="config.js"></script>
-        <script src="ads.js"></script>
         <script src="network.js"></script>
+        <script src="ads.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
