@@ -1,305 +1,218 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Hourly to Salary Calculator | hourly2salarycalc.com</title>
-        <meta
-            name="description"
-            content="Instantly convert your hourly wage to annual, monthly, bi-weekly, and weekly salary. Free hourly2salarycalc.com Calculator for job seekers and recruiters."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hourly2salarycalc.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Hourly to Salary Calculator | hourly2salarycalc.com" />
-        <meta property="og:description" content="Instantly convert your hourly wage to annual, monthly, bi-weekly, and weekly salary. Free hourly2salarycalc.com Calculator for job seekers and recruiters." />
-        <meta property="og:url" content="https://hourly2salarycalc.com/" />
-        <meta name="google-adsense-account" content="ca-pub-7744853829365165" />
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165"
-            crossorigin="anonymous"
-        ></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="styles.css" />
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "WebApplication",
-                "name": "Hourly to Salary Calculator",
-                "url": "https://hourly2salarycalc.com/",
-                "applicationCategory": "FinanceApplication",
-                "operatingSystem": "All",
-                "description": "Online hourly to salary calculator that converts hourly pay into weekly, monthly, and annual salary estimates based on hours per week and weeks per year."
-            }
-        </script>
-    </head>
-    <body>
-        <div class="wrap">
-            <header>
-                <div class="brand">
-                    <h1>hourly2salarycalc<span class="dot">.com</span></h1>
-                    <p>Hourly wage → annual salary, instantly</p>
-                </div>
-                <nav>
-                    <a href="index.html" class="active">Home</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="legal.html">Legal</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </header>
-
-            <!-- Sponsor banner (inactive) -->
-            <div
-                class="sponsor-banner"
-                style="display: none"
-                aria-hidden="true"
-            >
-                <span class="sponsor-label">Sponsored</span>
-                <span class="sponsor-content"></span>
-            </div>
-
-            <!-- AdSense top -->
-            <div class="ad-slot is-off" id="adTop" aria-label="Advertisement"></div>
-
-            <div class="grid">
-                <section class="card">
-                    <h2>Enter your hourly wage</h2>
-                    <p>
-                        Adjust hours per week and weeks per year if needed.
-                        Results update instantly.
-                    </p>
-
-                    <label for="hourly">Hourly Wage ($)</label>
-                    <input
-                        type="text"
-                        inputmode="decimal"
-                        id="hourly"
-                        placeholder="e.g. 25.00"
-                    />
-
-                    <label for="hours">Hours Per Week</label>
-                    <input
-                        type="text"
-                        inputmode="decimal"
-                        id="hours"
-                        value="40"
-                    />
-
-                    <label for="weeks">Weeks Per Year</label>
-                    <input
-                        type="text"
-                        inputmode="decimal"
-                        id="weeks"
-                        value="52"
-                    />
-
-                    <button class="btn" id="calc-btn">
-                        Calculate Salary
-                    </button>
-
-                    <div class="result" id="result" style="display: none">
-                        <div class="result-grid">
-                            <div class="result-item big-result">
-                                <span class="result-label">Annual Salary</span>
-                                <span class="result-value" id="annual">—</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label">Monthly</span>
-                                <span class="result-value" id="monthly">—</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label">Bi-Weekly</span>
-                                <span class="result-value" id="biweekly"
-                                    >—</span
-                                >
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label">Weekly</span>
-                                <span class="result-value" id="weekly">—</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-label">Daily</span>
-                                <span class="result-value" id="daily">—</span>
-                            </div>
-                        </div>
-                        <p class="mini" id="assumption-note"></p>
-                    </div>
-
-                    <p class="mini">
-                        Disclaimer: Results are estimates based on the numbers
-                        you enter. Taxes, benefits, and overtime are not
-                        included. Not financial advice.
-                    </p>
-                </section>
-
-                <aside class="card">
-                    <h2>What this tool does</h2>
-                    <p>
-                        Quickly convert an hourly wage to a full salary
-                        breakdown. Essential for job seekers comparing offers,
-                        recruiters quoting packages, or anyone negotiating pay.
-                    </p>
-                    <ul>
-                        <li>Annual, monthly, bi-weekly, weekly &amp; daily</li>
-                        <li>Adjustable hours per week and weeks per year</li>
-                        <li>Instant calculation — no account needed</li>
-                        <li>Runs entirely in your browser</li>
-                    </ul>
-
-                    <div class="sep"></div>
-
-                    <div class="quick-ref">
-                        <p><strong>Common equivalents</strong></p>
-                        <div class="quick-grid">
-                            <span>$15/hr</span><span>$31,200/yr</span>
-                            <span>$20/hr</span><span>$41,600/yr</span>
-                            <span>$25/hr</span><span>$52,000/yr</span>
-                            <span>$30/hr</span><span>$62,400/yr</span>
-                            <span>$50/hr</span><span>$104,000/yr</span>
-                        </div>
-                        <p class="mini">Based on 40hrs/week × 52 weeks</p>
-                    </div>
-
-                    <div class="sep"></div>
-                    <p class="mini">
-                        No accounts, no tracking, no subscriptions.
-                    </p>
-
-                    <!-- Sidebar sponsor slot (inactive) -->
-                    <div
-                        class="sponsor-sidebar"
-                        style="display: none"
-                        aria-hidden="true"
-                    >
-                        <span class="sponsor-label">Sponsored</span>
-                    </div>
-                </aside>
-            </div>
-
-            <!-- AdSense bottom -->
-            <div class="ad-slot is-off" id="adBottom" aria-label="Advertisement"></div>
-
-            <section class="calculator-explanation">
-                <h2>What This Calculator Does</h2>
-                <p>This hourly to salary calculator converts an hourly wage into weekly, monthly, and annual salary estimates.</p>
-                <p>You enter an hourly rate and your typical working schedule (hours per week and weeks per year). The calculator estimates gross pay across different time periods for planning and comparison.</p>
-                <p>Results are pre-tax estimates only. Taxes, deductions, overtime, and benefits are not included.</p>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Example Hourly to Salary Conversion</h2>
-                <ul>
-                    <li><strong>Hourly rate:</strong> $25.00</li>
-                    <li><strong>Hours per week:</strong> 40</li>
-                    <li><strong>Weeks per year:</strong> 52</li>
-                </ul>
-                <p><strong>Annual estimate:</strong> $25 × 40 × 52 = <strong>$52,000 per year</strong></p>
-                <p><strong>Derived estimates:</strong></p>
-                <ul>
-                    <li>Monthly: $52,000 ÷ 12 ≈ <strong>$4,333</strong></li>
-                    <li>Bi-weekly: $52,000 ÷ 26 = <strong>$2,000</strong></li>
-                    <li>Weekly: $52,000 ÷ 52 = <strong>$1,000</strong></li>
-                    <li>Daily (8-hour day): $25 × 8 = <strong>$200</strong></li>
-                </ul>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Formula</h2>
-                <p><strong>Annual Salary = Hourly Rate × Hours per Week × Weeks per Year</strong></p>
-                <p>Derived values:</p>
-                <ul>
-                    <li><strong>Monthly = Annual ÷ 12</strong></li>
-                    <li><strong>Bi-weekly = Annual ÷ 26</strong></li>
-                    <li><strong>Weekly = Annual ÷ 52</strong></li>
-                    <li><strong>Daily (8-hour day) = Hourly Rate × 8</strong></li>
-                </ul>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Calculation Methodology</h2>
-                <ol>
-                    <li>The calculator takes your hourly rate, hours per week, and weeks per year.</li>
-                    <li>It estimates annual gross salary as: hourly × hours per week × weeks per year.</li>
-                    <li>It derives monthly pay from the annual value (annual ÷ 12).</li>
-                    <li>It derives bi-weekly pay from the annual value (annual ÷ 26).</li>
-                    <li>It derives weekly pay from the annual value (annual ÷ 52).</li>
-                    <li>It estimates daily pay using an 8-hour day assumption (hourly × 8).</li>
-                </ol>
-                <p>This tool provides gross estimates only. It does not account for taxes, overtime rules, paid or unpaid time off, or employer benefits.</p>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Common Scenarios</h2>
-                <ul>
-                    <li><strong>Comparing job offers</strong> — convert hourly contractor rates to annual equivalents to compare against salaried roles</li>
-                    <li><strong>Part-time income planning</strong> — estimate annual earnings from part-time or seasonal work with fewer weeks per year</li>
-                    <li><strong>Budget planning</strong> — use monthly pay estimates to plan expenses and savings</li>
-                    <li><strong>Freelance rate benchmarking</strong> — check how your hourly rate translates to an annual equivalent</li>
-                    <li><strong>Schedule change impact</strong> — see how reducing hours per week or weeks per year affects total annual income</li>
-                </ul>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Does this include overtime?</h3>
-                <p>No. This calculator converts a base hourly rate using the hours and weeks you enter. Overtime rules vary by employer and location and are not factored in.</p>
-
-                <h3>Does this include taxes?</h3>
-                <p>No. All results are gross estimates before taxes, deductions, and benefits. Use a payroll calculator for net-pay estimates.</p>
-
-                <h3>Why do I need weeks per year?</h3>
-                <p>Weeks per year affects the annual estimate because unpaid time off, contract schedules, or seasonal work can reduce working weeks below 52.</p>
-
-                <h3>How is daily pay calculated?</h3>
-                <p>Daily pay is estimated using a standard 8-hour day assumption: hourly rate × 8. This is independent of your hours-per-week setting.</p>
-
-                <h3>Is this exact?</h3>
-                <p>No. Results are estimates for comparison and planning. Actual pay varies with holidays, time off, and employer payroll policies.</p>
-            </section>
-
-            <section class="calculator-explanation">
-                <h2>Related Calculators</h2>
-                <ul>
-                    <li><a href="https://freelanceincomecalc.com/" target="_blank" rel="noopener">Freelance Income Calculator</a> — estimate gross freelance earnings by rate and hours worked</li>
-                    <li><a href="https://1099vsw2calc.com/" target="_blank" rel="noopener">1099 vs W-2 Calculator</a> — compare take-home pay as a contractor vs employee after taxes</li>
-                    <li><a href="https://salaryvsinflation.com/" target="_blank" rel="noopener">Salary vs Inflation Calculator</a> — see if your raise actually beats inflation in real purchasing power</li>
-                    <li><a href="https://payrolldatechecker.com/" target="_blank" rel="noopener">Payroll Date Checker</a> — calculate payroll processing and submit dates</li>
-                </ul>
-            </section>
-
-            <footer class="foot">
-                <div class="sep"></div>
-                <div class="network-links related-tools"></div>
-                <div class="footer-resources"><strong>Resources:</strong> <a href="https://calc-hq.com" target="_blank" rel="noopener">Financial Calculator Hub</a></div>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy</a> &nbsp;|&nbsp;
-                    <a href="legal.html">Legal</a> &nbsp;|&nbsp;
-                    <a href="faq.html">FAQ</a> &nbsp;|&nbsp;
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-meta">
-                    © <span id="year"></span> hourly2salarycalc.com
-                </div>
-                <p class="sponsor-line">
-                    Sponsored placements &amp; partnerships:
-                    <a href="mailto:partnerships@calc-hq.com"
-                        >partnerships@calc-hq.com</a
-                    >
-                </p>
-            </footer>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hourly to Salary Calculator | Hourly2SalaryCalc.com</title>
+  <meta name="description" content="Convert hourly wage to annual, monthly, bi-weekly, weekly, and daily salary. Adjust hours per week and weeks per year for accurate results.">
+  <link rel="canonical" href="https://hourly2salarycalc.com/"/>
+  <meta name="robots" content="index, follow">
+  <meta name="google-adsense-account" content="ca-pub-7744853829365165">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hourly to Salary Calculator | Hourly2SalaryCalc.com">
+  <meta property="og:description" content="Convert hourly wage to annual, monthly, bi-weekly, weekly, and daily salary equivalents.">
+  <meta property="og:url" content="https://hourly2salarycalc.com/">
+  <meta property="og:site_name" content="Hourly2SalaryCalc.com">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css?v=layout-repair-0501">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hourly to Salary Calculator",
+  "url": "https://hourly2salarycalc.com/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Convert hourly wage to annual, monthly, bi-weekly, weekly, and daily salary equivalents with adjustable hours and weeks.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <h1>Hourly to Salary</h1>
+      <p>Hourly wage → annual salary, instantly</p>
+    </div>
+    <div data-site-header-nav></div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h2>Enter your hourly wage</h2>
+    <div class="form-card">
+      <form id="calcForm" onsubmit="event.preventDefault();">
+        <div class="field">
+          <label for="hourly">Hourly Rate (USD)</label>
+          <input id="hourly" type="text" inputmode="decimal" placeholder="e.g. 30" value="30">
         </div>
+        <div class="field">
+          <label for="hours">Hours per Week</label>
+          <input id="hours" type="number" step="0.5" min="1" max="80" placeholder="e.g. 40" value="40">
+        </div>
+        <div class="field">
+          <label for="weeks">Weeks per Year</label>
+          <input id="weeks" type="number" step="1" min="1" max="52" placeholder="e.g. 52" value="52">
+        </div>
+        <button type="submit" class="btn" id="calc-btn">Calculate</button>
+      </form>
+    </div>
+    <div id="result" style="display:none;">
+      <div class="result-grid">
+        <div class="result-row"><span class="result-label">Annual Salary</span><span class="result-value" id="annual">—</span></div>
+        <div class="result-row"><span class="result-label">Monthly</span><span class="result-value" id="monthly">—</span></div>
+        <div class="result-row"><span class="result-label">Bi-Weekly</span><span class="result-value" id="biweekly">—</span></div>
+        <div class="result-row"><span class="result-label">Weekly</span><span class="result-value" id="weekly">—</span></div>
+        <div class="result-row"><span class="result-label">Daily</span><span class="result-value" id="daily">—</span></div>
+      </div>
+      <p id="assumption-note" class="assumption-note"></p>
+    </div>
+  </section>
 
-        <script src="config.js"></script>
-        <script src="network.js"></script>
-        <script src="ads.js"></script>
-        <script src="app.js"></script>
-    </body>
+  <section class="section-card">
+    <h2>What This Calculator Gives You</h2>
+    <p>You just got a job offer at $28 per hour. Sounds reasonable — but what does that actually mean per year? Per month? Per paycheck?</p>
+    <p>This calculator converts any hourly wage into annual, monthly, bi-weekly, weekly, and daily salary equivalents. You set the hours per week and weeks per year, because not every job is 40 hours × 52 weeks. A teacher working 38 hours × 42 weeks has a very different annual income than a nurse working 36 hours × 50 weeks, even at the same hourly rate.</p>
+    <p>No tax deductions, no benefit estimates, no bonus projections. Just the raw conversion from hourly to salary so you can compare offers, budget your income, or understand what your time is worth.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Hourly Pay vs Annual Salary</h2>
+    <p>Hourly pay and annual salary are two ways of describing the same income — but the number that matters depends on what you're doing with it.</p>
+    <p>Hourly rates tell you what your time is worth per unit. If you make $30/hour and work 40 hours, you earned $1,200 that week. Annual salary tells you what you earn over a full year, which is what matters for rent budgets, loan applications, and comparing jobs that quote compensation differently.</p>
+    <p>The conversion is simple: <strong>Annual salary = Hourly rate × Hours per week × Weeks per year</strong></p>
+    <p>At $30/hour, 40 hours/week, 52 weeks/year: $62,400. But drop to 37.5 hours/week (common in government and nonprofit roles) and you're at $58,500 — nearly $4,000 less per year at the same hourly rate. The rate didn't change. The schedule did.</p>
+    <p>This is why two jobs paying "the same hourly rate" can produce very different annual incomes. Always convert to annual before comparing.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Example Calculation: $30/hour, 40 hours/week, 52 weeks/year</h2>
+    <table class="example-table">
+      <tr><th>Period</th><th>Formula</th><th>Amount</th></tr>
+      <tr><td>Weekly</td><td>$30 × 40 hours</td><td>$1,200</td></tr>
+      <tr><td>Bi-weekly</td><td>$62,400 ÷ 26</td><td>$2,400</td></tr>
+      <tr><td>Monthly</td><td>$62,400 ÷ 12</td><td>$5,200</td></tr>
+      <tr><td>Annual</td><td>$30 × 40 × 52</td><td>$62,400</td></tr>
+      <tr><td>Daily</td><td>$30 × (40 ÷ 5)</td><td>$240</td></tr>
+    </table>
+    <p>A $30/hour full-time worker earns $5,200 per month before taxes. After federal income tax and FICA (roughly 20–25% for a single filer at this income), take-home is approximately $4,000–$4,200/month.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Why Hours and Weeks Matter</h2>
+    <p>Most salary comparisons assume 40 hours/week and 52 weeks/year. Reality is rarely that clean.</p>
+    <p><strong>Hours per week variations:</strong></p>
+    <ul>
+      <li>40 hours — standard full-time in private sector</li>
+      <li>37.5 hours — government, education, many nonprofits (unpaid lunch)</li>
+      <li>36 hours — some healthcare shifts (three 12-hour shifts)</li>
+      <li>35 hours — some European-style schedules</li>
+    </ul>
+    <p>At $25/hour, the difference between 35 and 40 hours is $6,500/year:</p>
+    <ul>
+      <li>35 hours × 52 weeks = $45,500</li>
+      <li>40 hours × 52 weeks = $52,000</li>
+    </ul>
+    <p><strong>Weeks per year variations:</strong></p>
+    <ul>
+      <li>52 weeks — no unpaid time off</li>
+      <li>50 weeks — 2 weeks unpaid vacation</li>
+      <li>48 weeks — 4 weeks unpaid time off</li>
+      <li>42 weeks — teachers (summer break, spring break, winter break)</li>
+    </ul>
+    <p>At $30/hour × 40 hours, the difference between 52 and 48 weeks is $4,800/year. That's a 7.7% pay cut disguised as "time off."</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Full-Time, Part-Time, and Unpaid Time Off</h2>
+    <p><strong>Full-time (40 hours × 52 weeks).</strong> The standard baseline. $25/hour = $52,000/year. This is what most salary comparisons quote.</p>
+    <p><strong>Part-time (20 hours × 52 weeks).</strong> Same rate, half the hours. $25/hour = $26,000/year. Benefits are usually not included, making the total compensation gap even wider.</p>
+    <p><strong>Full-time with unpaid vacation (40 hours × 50 weeks).</strong> Two weeks off without pay drops $25/hour from $52,000 to $50,000. If the employer doesn't offer paid time off, you need to factor that into your annual budget — you're living on 50 weeks of income over 52 weeks of expenses.</p>
+    <p><strong>Seasonal or contract work (40 hours × 40 weeks).</strong> Construction, agriculture, and seasonal retail often run 8–10 months. $25/hour × 40 hours × 40 weeks = $40,000. That has to cover 12 months of living expenses. The effective monthly income is $3,333, not the $4,333 you'd earn if the same rate applied year-round.</p>
+    <p><strong>Teachers (37.5 hours × 42 weeks).</strong> A teacher earning $35/hour doesn't make $35 × 40 × 52 = $72,800. They make $35 × 37.5 × 42 = $55,125. That's a $17,675 difference from the naive calculation — which is why teacher salary comparisons are so often misleading.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Hourly vs Salary Job Offers</h2>
+    <p>A company offers you $60,000/year salaried. Another offers $32/hour. Which pays more?</p>
+    <p>It depends entirely on hours and weeks:</p>
+    <ul>
+      <li>$32/hour × 40 hours × 52 weeks = $66,560 — the hourly job pays $6,560 more</li>
+      <li>$32/hour × 37.5 hours × 52 weeks = $62,400 — the hourly job pays $2,400 more</li>
+      <li>$32/hour × 40 hours × 50 weeks = $64,000 — still $4,000 more</li>
+      <li>$32/hour × 40 hours × 48 weeks = $61,440 — barely $1,440 more</li>
+    </ul>
+    <p>But salary positions often come with paid time off, health insurance, retirement contributions, and other benefits. The hourly worker who takes 2 weeks off earns $64,000 instead of $66,560. The salaried worker takes the same 2 weeks and still earns $60,000. The gap shrinks to $4,000 — and may disappear entirely after benefits.</p>
+    <p>To see the full picture including taxes, run both numbers through <a href="https://aftertaxsalarycalc.com" target="_blank" rel="noopener">AfterTaxSalaryCalc.com</a>. To factor in benefits and bonuses, use <a href="https://totalcompcalc.com" target="_blank" rel="noopener">TotalCompCalc.com</a>.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Real-World Scenarios</h2>
+    <ul>
+      <li><strong>The retail worker going full-time.</strong> You've been working 25 hours/week at $16/hour ($20,800/year). A full-time offer at the same rate (40 hours × 50 weeks) gives you $32,000 — an $11,200 increase. After taxes, you keep roughly $8,800 more per year. That's $733/month additional in your budget.</li>
+      <li><strong>The freelancer comparing to a staff job.</strong> You bill $75/hour and work about 1,500 hours/year (roughly 29 hours/week × 52 weeks). That's $112,500 gross. A staff position offers $95,000 salaried. On paper, freelancing pays $17,500 more — but you're paying self-employment tax (an extra 7.65%), your own health insurance ($6,000–$12,000/year), and have no paid time off. Use <a href="https://freelanceincomecalc.com" target="_blank" rel="noopener">FreelanceIncomeCalc.com</a> for the full freelance breakdown.</li>
+      <li><strong>The overtime question.</strong> You make $22/hour and your employer offers time-and-a-half overtime. At 50 hours/week × 50 weeks: base pay is $44,000, plus 10 overtime hours/week at $33/hour = $16,500 in overtime. Total: $60,500. Use <a href="https://overtimepaycalc.com" target="_blank" rel="noopener">OvertimePayCalc.com</a> for detailed overtime calculations.</li>
+      <li><strong>The contract-to-hire decision.</strong> A 6-month contract at $45/hour (40 hours × 26 weeks) = $46,800. A permanent role at $80,000/year. The contract pays more in the short term ($46,800 vs $40,000 for 6 months), but the permanent role includes benefits worth $10,000–$15,000/year and continues after the contract ends. Over 12 months, permanent wins by $33,200–$38,200 if the contract isn't renewed.</li>
+      <li><strong>The teacher comparing to private sector.</strong> A teacher earning $55,000/year works roughly 42 weeks. That's an effective rate of about $32.74/hour at 37.5 hours/week. A private-sector job at $35/hour × 40 hours × 50 weeks = $70,000 — but without summer break. The teacher trades $15,000 in annual income for 10 weeks off.</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2>How to Use These Numbers</h2>
+    <ul>
+      <li><strong>Comparing job offers.</strong> Convert every offer to the same basis — annual salary at 40 hours × 52 weeks — before comparing. An hourly rate without hours isn't a complete offer.</li>
+      <li><strong>Budgeting your income.</strong> Use the monthly figure, not annual, for rent and expense planning. And use the weeks-you-actually-work number, not 52, if you have unpaid time off.</li>
+      <li><strong>Negotiating rate vs hours.</strong> If an employer can't increase your hourly rate, ask for more hours. Going from 35 to 40 hours/week at $25/hour adds $6,500/year — equivalent to a $1.25/hour raise at 40 hours.</li>
+      <li><strong>Deciding between hourly and salaried.</strong> Calculate the hourly equivalent of the salary (salary ÷ hours ÷ weeks), then compare rates. A $60,000 salary at 40 hours × 50 weeks = $30/hour. A $60,000 salary at 45 hours × 52 weeks = $25.64/hour — the longer hours reduce your effective rate by 14.5%.</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2>FAQ</h2>
+    <h3>How do I calculate my hourly rate from an annual salary?</h3>
+    <p>Divide your annual salary by the total hours you work per year. For a standard 40-hour week over 52 weeks, that's 2,080 hours. A $60,000 salary ÷ 2,080 = $28.85/hour.</p>
+    <h3>What if I work overtime?</h3>
+    <p>This calculator uses a flat hourly rate. For overtime at 1.5× pay, use <a href="https://overtimepaycalc.com" target="_blank" rel="noopener">OvertimePayCalc.com</a>.</p>
+    <h3>Does this include taxes?</h3>
+    <p>No. All figures are pre-tax. Use <a href="https://aftertaxsalarycalc.com" target="_blank" rel="noopener">AfterTaxSalaryCalc.com</a> to see after-tax salary.</p>
+    <h3>What about benefits?</h3>
+    <p>Benefits aren't included in this conversion. Use <a href="https://totalcompcalc.com" target="_blank" rel="noopener">TotalCompCalc.com</a> for total compensation comparisons.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Data Sources</h2>
+    <ul>
+      <li><strong>Fair Labor Standards Act (FLSA):</strong> Defines the federal minimum wage, overtime eligibility, and the 40-hour standard workweek in the United States</li>
+      <li><strong>Bureau of Labor Statistics (BLS):</strong> Reports median hourly earnings by occupation and industry — Current Population Survey (CPS)</li>
+      <li><strong>Standard payroll periods:</strong> 52 weeks/year, 26 bi-weekly pay periods, 12 monthly pay periods — per U.S. payroll convention</li>
+      <li><strong>Work hour baselines:</strong> 40 hours/week (FLSA standard), 37.5 hours/week (government/nonprofit standard with unpaid lunch), 2,087 hours/year (federal employee average per OPM)</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2>Limitations</h2>
+    <p><strong>Gross income only.</strong> All figures are pre-tax. Use AfterTaxSalaryCalc.com to see after-tax salary at any income level.</p>
+    <p><strong>No overtime calculation.</strong> This tool uses a single hourly rate for all hours. If you work overtime at a higher rate, use OvertimePayCalc.com for accurate totals.</p>
+    <p><strong>No benefits included.</strong> Health insurance, retirement contributions, and paid leave aren't factored. Use TotalCompCalc.com for full compensation comparisons.</p>
+    <p><strong>Assumes consistent schedule.</strong> The calculator uses fixed hours per week and weeks per year. If your schedule varies (on-call, seasonal spikes), use a weighted average.</p>
+    <p><strong>No state or local differences.</strong> Minimum wage, overtime rules, and benefit mandates vary by state. This tool doesn't account for jurisdiction-specific requirements.</p>
+    <p><strong>Daily rate uses 5-day week.</strong> Daily salary = hourly rate × (hours per week ÷ 5). If you work 4 days/week, the daily rate shown won't match your actual daily earnings.</p>
+    <p><strong>Not financial advice.</strong> This is a conversion tool. Consult a financial advisor or compensation specialist for career decisions.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap" id="site-footer"></div>
+</footer>
+<script src="config.js"></script>
+<script src="network.js"></script>
+<script src="ads.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

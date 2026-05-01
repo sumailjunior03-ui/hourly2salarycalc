@@ -87,8 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (yr) yr.textContent = new Date().getFullYear();
 
   // Network links
-  if (typeof renderNetworkLinks === "function") {
-    renderNetworkLinks("footer-network-links");
   }
 
   // Auto-calculate on load
